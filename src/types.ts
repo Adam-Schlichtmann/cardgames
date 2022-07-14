@@ -1,0 +1,39 @@
+export enum Suit {
+  Hearts = "Hearts",
+  Diamonds = "Diamonds",
+  Clubs = "Clubs",
+  Spades = "Spades",
+}
+
+export enum Number {
+  Ace = 1,
+  Two = 2,
+  Three = 3,
+  Four = 4,
+  Five = 5,
+  Six = 6,
+  Seven = 7,
+  Eight = 8,
+  Nine = 9,
+  Ten = 10,
+  Jack = 11,
+  Queen = 12,
+  King = 13,
+}
+
+export type Card = {
+  suit: Suit;
+  number: Number;
+};
+
+export type Comparison = "HIGH" | "LOW" | "SAME";
+export type Locations =
+  | "topLeft"
+  | "topMiddle"
+  | "topRight"
+  | "middleLeft"
+  | "middleMiddle"
+  | "middleRight"
+  | "bottomLeft"
+  | "bottomMiddle"
+  | "bottomRight";
