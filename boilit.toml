@@ -1,0 +1,66 @@
+[options]
+require_exact_inputs = true
+allow_multi_creation = true
+
+[[config.component]]
+name = "[[:0:]]/[[:0:]].tsx"
+contents = """
+import { Text, View } from 'react-native';
+
+const [[:0:]] = () => {
+  return (
+    <View>
+      <Text>[[:0:]]</Text>
+    </View>
+  );
+};
+
+export default [[:0:]];
+"""
+
+[[config.component]]
+name = "[[:0:]]/index.ts"
+contents = "export { default } from \"./[[:0:]]\";"
+
+[[config.component]]
+name = "index.ts"
+append = true
+sort = true
+contents = "export { default as [[:0:]] } from \"./[[:0:]]\";"
+
+[[config.controller]]
+name = "[[:0:]]/[[:0:]].ts"
+contents = """
+/**
+ *
+ */
+export default () => {};
+"""
+
+[[config.controller]]
+name = "[[:0:]]/index.ts"
+contents = """
+export { default } from './[[:0:]]';
+"""
+
+
+[[config.controller]]
+name = "index.ts"
+append = true
+sort = true
+contents = """
+export { default as [[:0:]] } from './[[:0:]]';
+"""
+
+
+[[config.controller]]
+name = "[[:0:]]/__tests__/[[:0:]].test.ts"
+contents = """
+import [[:0:]] from '../[[:0:]]';
+
+describe('[[:0:]]', () => {
+  it('should do a thing', () => {
+    expect([[:0:]]).not.toThrow();
+  });
+})
+"""
